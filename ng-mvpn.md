@@ -1,5 +1,5 @@
-### NG-MVPN
-## Multicast Source
+## NG-MVPN
+### Multicast Source
 Interfaces
 ```
 set interfaces lo0 unit 1 family inet address 1.1.100.1/32
@@ -31,7 +31,7 @@ set routing-instances ng-mvpn-v3 vrf-target target:65100:3999
 set routing-instances ng-mvpn-v3 vrf-table-label
 set routing-instances ng-mvpn-v3 provider-tunnel ldp-p2mp
 ```
-## Multicast Receiver
+### Multicast Receiver
 IRB interface with virtual GW
 ```
 set interfaces irb unit 2001 virtual-gateway-accept-data
@@ -91,7 +91,7 @@ set protocols igmp interface irb.2001 static group 232.0.0.0 group-count 512
 set protocols igmp interface irb.2001 static group 232.0.0.0 source 192.168.100.2
 ```
 
-## Show commands
+### Show commands
 Multicast route
 ```
 run show multicast route instance multicast_vrf_2001
