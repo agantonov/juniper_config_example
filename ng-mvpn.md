@@ -244,6 +244,48 @@ multicast_vrf_2001.mvpn.0: 2002 destinations, 2003 routes (2002 active, 0 holddo
   7:1.1.0.1:3999:65100:32:192.168.100.10:32:232.0.0.4/240
 *                         Self                 0       100        I
 ```
+Show mvpn c-multicast (receiver)
+```
+# run show mvpn c-multicast instance-name multicast_vrf_2001
+
+MVPN instance:
+Legend for neighbor state (St)
+A-    Preferred upstream neighbor for inter-AS
+
+Legend for provider tunnel
+S-    Selective provider tunnel
+F-    Flood NH forwarding NH
+M-    Multicast Composite NH
+C-    Cloned NH
+
+Legend for c-multicast routes properties (St)
+DS -- derived from (*, c-g)          RM -- remote VPN route
+I -- Inactive
+Family : INET
+
+Instance : multicast_vrf_2001
+  MVPN Mode : SPT-ONLY
+
+  C-mcast IPv4 (S:G)            Provider Tunnel                                     Label-In    St    FwdNh    Segment
+  192.168.100.10/32:232.0.0.0/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.1/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.2/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.3/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.4/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.5/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.6/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.7/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.8/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.9/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                       622         M-(nil)
+  192.168.100.10/32:232.0.0.10/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                      622         M-(nil)
+  192.168.100.10/32:232.0.0.11/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                      622         M-(nil)
+  192.168.100.10/32:232.0.0.12/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                      622         M-(nil)
+  192.168.100.10/32:232.0.0.13/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                      622         M-(nil)
+  192.168.100.10/32:232.0.0.14/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                      622         M-(nil)
+  192.168.100.10/32:232.0.0.15/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                      622         M-(nil)
+  192.168.100.10/32:232.0.0.16/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                      622         M-(nil)
+```
+
 Routing table (source)
 ```
 # run show route table ng-mvpn-v3.mvpn
@@ -328,4 +370,40 @@ ng-mvpn-v3.mvpn.0: 2001 destinations, 6001 routes (2001 active, 0 holddown, 0 hi
   Prefix		  Nexthop	       MED     Lclpref    AS path
   1:1.1.0.1:3999:1.1.0.1/240
 *                         Self                         100        I
+```
+Show mvpn c-multicast (source)
+```
+# run show mvpn c-multicast instance-name ng-mvpn-v3
+
+MVPN instance:
+Legend for neighbor state (St)
+A-    Preferred upstream neighbor for inter-AS
+
+Legend for provider tunnel
+S-    Selective provider tunnel
+F-    Flood NH forwarding NH
+M-    Multicast Composite NH
+C-    Cloned NH
+
+Legend for c-multicast routes properties (St)
+DS -- derived from (*, c-g)          RM -- remote VPN route
+I -- Inactive
+Family : INET
+
+Instance : ng-mvpn-v3
+  MVPN Mode : SPT-ONLY
+
+  C-mcast IPv4 (S:G)            Provider Tunnel                                     Label-In    St    FwdNh    Segment
+  192.168.100.10/32:232.0.0.0/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.1/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.2/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.3/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.4/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.5/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.6/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.7/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.8/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.9/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                              RM  F-1070083
+  192.168.100.10/32:232.0.0.10/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                             RM  F-1070083
+  192.168.100.10/32:232.0.0.11/32 LDP-P2MP:1.1.0.1, lsp-id 16777217                             RM  F-1070083
 ```
