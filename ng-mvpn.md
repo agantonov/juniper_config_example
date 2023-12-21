@@ -224,6 +224,26 @@ multicast_vrf_2001.inet.1: 2003 destinations, 4003 routes (2003 active, 0 holddo
                     [MVPN/70] 3d 02:41:14
                        Multicast (IPv4) Composite
 ```
+
+Advertising-protocol BGP (receiver)
+```
+# run show route advertising-protocol bgp 1.1.0.101 table multicast_vrf_2001.mvpn
+
+multicast_vrf_2001.mvpn.0: 2002 destinations, 2003 routes (2002 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  1:1.1.0.7:2001:1.1.0.7/240
+*                         Self                         100        I
+  7:1.1.0.1:3999:65100:32:192.168.100.10:32:232.0.0.0/240
+*                         Self                 0       100        I
+  7:1.1.0.1:3999:65100:32:192.168.100.10:32:232.0.0.1/240
+*                         Self                 0       100        I
+  7:1.1.0.1:3999:65100:32:192.168.100.10:32:232.0.0.2/240
+*                         Self                 0       100        I
+  7:1.1.0.1:3999:65100:32:192.168.100.10:32:232.0.0.3/240
+*                         Self                 0       100        I
+  7:1.1.0.1:3999:65100:32:192.168.100.10:32:232.0.0.4/240
+*                         Self                 0       100        I
+```
 Routing table (source)
 ```
 # run show route table ng-mvpn-v3.mvpn
@@ -299,4 +319,13 @@ ng-mvpn-v3.inet.1: 2003 destinations, 2003 routes (2003 active, 0 holddown, 0 hi
                        to 10.100.0.27 via ae0.0, Push 391, Push 486(top)
                        to 10.100.0.27 via ae0.0, Push 526
                        to 10.100.0.33 via ae1.0, Push 526, Push 419(top)
+```
+Advertising-protocol BGP (source)
+```
+# run show route advertising-protocol bgp 1.1.0.101 table ng-mvpn-v3.mvpn
+
+ng-mvpn-v3.mvpn.0: 2001 destinations, 6001 routes (2001 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  1:1.1.0.1:3999:1.1.0.1/240
+*                         Self                         100        I
 ```
