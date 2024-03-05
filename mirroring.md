@@ -13,3 +13,16 @@ set groups ANALYZER bridge-domains INGRESS domain-type bridge
 set groups ANALYZER bridge-domains INGRESS vlan-id 999
 set groups ANALYZER bridge-domains INGRESS interface et-0/0/2.999
 ```
+Show status:
+```
+# run show forwarding-options port-mirroring
+Instance Name: INGRESS
+  Instance Id: 2
+  Input parameters:
+    Rate                  : 1
+    Run-length            : 0
+    Maximum-packet-length : 0
+  Output parameters:
+    Family              State     Destination          Next-hop
+    any                 up        et-0/0/2.999         NA
+```
