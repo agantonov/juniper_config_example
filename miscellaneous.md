@@ -50,3 +50,13 @@ set system ddos-protection protocols igmp aggregate bandwidth 100000
 set system ddos-protection protocols igmp aggregate burst 100000
 set system ntp server <ntp_server>
 ```
+Local switching on MX
+```
+set interfaces et-0/0/0 mtu 16000
+set interfaces et-0/0/0 encapsulation ethernet-ccc
+set interfaces et-0/0/0 unit 0 family ccc
+set interfaces et-0/0/1 mtu 16000
+set interfaces et-0/0/1 encapsulation ethernet-ccc
+set interfaces et-0/0/1 unit 0 family ccc
+set protocols l2circuit local-switching interface et-0/0/0.0 end-interface interface et-0/0/1.0
+```
