@@ -26,3 +26,22 @@ Instance Name: INGRESS
     Family              State     Destination          Next-hop
     any                 up        et-0/0/2.999         NA
 ```
+#### Mirroring on ACX7k
+```
+set groups ANALYZER interfaces et-0/0/25 unit 0 encapsulation vlan-bridge
+set groups ANALYZER interfaces et-0/0/25 unit 0 vlan-id 4090
+set groups ANALYZER forwarding-options analyzer A0 input ingress interface ae5.0
+set groups ANALYZER forwarding-options analyzer A0 output interface et-0/0/25.0
+set groups ANALYZER vlans VLAN4090 vlan-id 4090
+set groups ANALYZER vlans VLAN4090 interface et-0/0/25.0
+```
+Show status:
+```
+# run show forwarding-options analyzer
+  Analyzer name                    : A0
+  Mirror rate                      : 1
+  Maximum packet length            : 0
+  State                            : up
+  Ingress monitored interfaces     : ae5.0
+  Output interface                 : et-0/0/25.0
+```
