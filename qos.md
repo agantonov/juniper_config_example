@@ -99,7 +99,7 @@ set class-of-service schedulers SIG-OAM-SC transmit-rate percent 5
 set class-of-service schedulers SIG-OAM-SC buffer-size percent 2
 set class-of-service schedulers SIG-OAM-SC priority low
 ```
-### Heirarchical Policer
+### Hierarchical Policer
 ```
 set firewall family inet filter H-Pol-Inet interface-specific
 set firewall family inet filter H-Pol-Inet term platinum from dscp af11
