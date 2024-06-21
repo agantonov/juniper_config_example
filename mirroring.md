@@ -35,6 +35,10 @@ set groups ANALYZER forwarding-options analyzer A0 output interface et-0/0/25.0
 set groups ANALYZER vlans VLAN4090 vlan-id 4090
 set groups ANALYZER vlans VLAN4090 interface et-0/0/25.0
 ```
+VLAN Output:
+```
+set groups ANALYZER forwarding-options analyzer A0 output vlan VLAN4090
+```
 Show status:
 ```
 # run show forwarding-options analyzer
