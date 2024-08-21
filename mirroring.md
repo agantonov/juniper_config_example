@@ -1,3 +1,18 @@
+#### Mirroring Instance on PTX (EVO)
+```
+set groups PM interfaces ae0 unit 1 family inet filter input mirror_v4
+set groups PM interfaces ae0 unit 1 family inet6 filter input mirror_v6
+set groups PM interfaces et-1/0/35 unit 0 family inet address 192.168.100.2/24
+set groups PM interfaces et-1/0/35 unit 0 family inet6 address 2001::192:168:100:2/120
+set groups PM forwarding-options port-mirroring input rate 1000
+set groups PM forwarding-options port-mirroring family inet output interface et-1/0/35.0 next-hop 192.168.100.1
+set groups PM forwarding-options port-mirroring family inet6 output interface et-1/0/35.0 next-hop 2001::192:168:100:1
+set groups PM firewall family inet6 filter mirror_v6 term 1 then port-mirror
+set groups PM firewall family inet6 filter mirror_v6 term 1 then accept
+set groups PM firewall filter mirror_v4 term 1 then port-mirror
+set groups PM firewall filter mirror_v4 term 1 then accept
+```
+
 #### Mirroring Instance on MX
 ```
 set groups ANALYZER chassis fpc 0 port-mirror-instance INGRESS
