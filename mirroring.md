@@ -1,4 +1,4 @@
-#### Mirroring Instance on PTX (EVO)
+#### Mirroring Instance on PTX (EVO) - Local
 ```
 set groups PM interfaces ae0 unit 1 family inet filter input mirror_v4
 set groups PM interfaces ae0 unit 1 family inet6 filter input mirror_v6
@@ -11,6 +11,20 @@ set groups PM firewall family inet6 filter mirror_v6 term 1 then port-mirror
 set groups PM firewall family inet6 filter mirror_v6 term 1 then accept
 set groups PM firewall filter mirror_v4 term 1 then port-mirror
 set groups PM firewall filter mirror_v4 term 1 then accept
+```
+#### Mirroring Instance on PTX (EVO) - Remote
+```
+set groups PM interfaces ae0 unit 1 filter input MirrorAny
+set groups PM interfaces et-1/0/35 unit 0 family inet address 192.168.100.2/24
+set groups PM interfaces et-1/0/35 unit 0 family inet6 address 2001::192:168:100:2/120
+set groups PM interfaces fti0 unit 0 tunnel encapsulation gre source address 1.1.0.1
+set groups PM interfaces fti0 unit 0 tunnel encapsulation gre destination address 2.2.0.1
+set groups PM interfaces fti0 unit 0 family ccc
+set groups PM forwarding-options port-mirroring instance RemotePM input rate 1000
+set groups PM forwarding-options port-mirroring instance RemotePM family any output interface fti0.0
+set groups PM firewall family any filter MirrorAny term 1 then port-mirror-instance RemotePM
+set groups PM firewall family any filter MirrorAny term 1 then accept
+set groups PM routing-options static route 2.2.0.1/32 next-hop 192.168.100.1
 ```
 
 #### Mirroring Instance on MX
