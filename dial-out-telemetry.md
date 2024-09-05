@@ -4,6 +4,11 @@
 
 Download the model and copy to ````/usr/include/protos/````
 
+Install protocol buffer compiler:
+```
+apt install -y protobuf-compiler
+```
+
 ### Junos Config
 ```
 set groups TELEMETRY-DIAL-OUT services analytics zero-suppression no-zero-suppression
