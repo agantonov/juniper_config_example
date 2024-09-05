@@ -1,3 +1,9 @@
+### Junos Telemetry Models
+
+[Models](https://github.com/Juniper/telemetry/blob/master/README.md)
+
+Download the model and copy to ````/usr/include/protos/````
+
 ### Junos Config
 ```
 set groups TELEMETRY-DIAL-OUT services analytics zero-suppression no-zero-suppression
