@@ -10,3 +10,7 @@ an1:~$ su root
 Password:
 sh-5.1#
 ```
+### Login to vmhost
+```
+vhclient -s
+```
