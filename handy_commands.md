@@ -14,3 +14,17 @@ sh-5.1#
 ```
 vhclient -s
 ```
+### MX80/104 FPC
+```
+vty afeb0
+```
+### Resource monitoring
+```
+show system resource-monitor fpc
+show system resource-monitor summary
+```
+vty
+```
+show jnh 0 pool summary
+show jnh 0 pool summary verbose
+```
