@@ -22,3 +22,10 @@ set groups FW-Flex-64-Limited firewall family inet6 filter ISP-Outbound-v6 term 
 set groups FW-Flex-64-Limited firewall family inet6 filter ISP-Outbound-v6 term icmp-v6 then count icmp.out.v6
 set groups FW-Flex-64-Limited firewall family inet6 filter ISP-Outbound-v6 term icmp-v6 then accept
 ```
+#### Match 24-bit pattern 0x123456 after 16-byte offset
+```
+set groups FW-Flex-64-Limited firewall family inet6 filter ISP-Outbound-v6 term icmp-v6 from flexible-match-range match-start layer-3
+set groups FW-Flex-64-Limited firewall family inet6 filter ISP-Outbound-v6 term icmp-v6 from flexible-match-range byte-offset 16
+set groups FW-Flex-64-Limited firewall family inet6 filter ISP-Outbound-v6 term icmp-v6 from flexible-match-range bit-length 24
+set groups FW-Flex-64-Limited firewall family inet6 filter ISP-Outbound-v6 term icmp-v6 from flexible-match-range range 0x123456
+```
