@@ -10,3 +10,16 @@ MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxBo
 ```
 show snmp mib walk jnxBoxAnatomy
 ```
+#### CoS
+OID: ````1.3.6.1.4.1.2636.3.15````
+MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxCos````
+```
+show snmp mib walk jnxCos
+```
+### PSU
+OID: ````1.3.6.1.4.1.2636.3.58````
+MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxPsuMIBRoot````
+```
+show snmp mib walk jnxPsuMIBRoot
+```
+
