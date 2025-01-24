@@ -12,7 +12,7 @@ MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxBo
 ```
 show snmp mib walk jnxBoxAnatomy
 ```
-Telemetry sensors: ````/components/component````
+Telemetry sensor: ````/components/component````
 
 #### CoS
 OID: ````1.3.6.1.4.1.2636.3.15````
@@ -20,7 +20,7 @@ MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxCo
 ```
 show snmp mib walk jnxCos
 ```
-Telemetry sensors: ````/qos````
+Telemetry sensor: ````/qos````
 
 #### PSU
 OID: ````1.3.6.1.4.1.2636.3.58````
@@ -38,5 +38,7 @@ MIB Path: ````/iso/org/dod/internet/mgmt/mib-2/bgp````
 show snmp mib walk jnxBgpM2Experiment
 show snmp mib walk bgp
 ```
-Telemetry sensors: ````/bgp-rib````
+Telemetry sensor: ````/bgp-rib````
 
+#### Fabric Statistics
+Telemetry sensor: ````/junos/fabric-statistics````
