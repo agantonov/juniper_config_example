@@ -16,17 +16,21 @@ MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxCo
 ```
 show snmp mib walk jnxCos
 ```
-### PSU
+#### PSU
 OID: ````1.3.6.1.4.1.2636.3.58````
 MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxPsuMIBRoot````
 ```
 show snmp mib walk jnxPsuMIBRoot
 ```
-### BGP
+#### BGP
 OID: ````1.3.6.1.4.1.2636.5.1````
 MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxExperiment/jnxBgpM2Experiment````
+
+OID: ````1.3.6.1.2.1.15````
+MIB Path: ````/iso/org/dod/internet/mgmt/mib-2/bgp````
 ```
 show snmp mib walk jnxBgpM2Experiment
+show snmp mib walk bgp
 ```
 
 
