@@ -4,7 +4,7 @@ MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/ifJnx
 ```
 show snmp mib walk ifJnx
 ```
-#### Box Anatomy
+#### Box Anatomy (CPU, Memory, Tempepature, FRU, etc)
 OID: ````1.3.6.1.4.1.2636.3.1````
 MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxBoxAnatomy````
 ```
@@ -22,4 +22,11 @@ MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxMibs/jnxPs
 ```
 show snmp mib walk jnxPsuMIBRoot
 ```
+### BGP
+OID: ````1.3.6.1.4.1.2636.5.1````
+MIB Path: ````/iso/org/dod/internet/private/enterprises/juniperMIB/jnxExperiment/jnxBgpM2Experiment````
+```
+show snmp mib walk jnxBgpM2Experiment
+```
+
 
