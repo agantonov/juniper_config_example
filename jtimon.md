@@ -1,5 +1,9 @@
 https://github.com/Juniper/jtimon
 ```
+set system services extension-service request-response grpc clear-text port 50051
+set system services extension-service request-response grpc skip-authentication
+```
+```
 ./jtimon --config config.json --print
 ```
 
